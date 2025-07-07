@@ -77,7 +77,7 @@ public class BookTicket extends JFrame {
 	        	    public void focusGained(FocusEvent e) {
 	        	        if (dateField.getText().equals("YYYY-MM-DD")) {
 	        	            dateField.setText("");
-	        	            dateField.setForeground(Color.BLACK); // User text color
+	        	            dateField.setForeground(Color.BLACK); 
 	        	        }
 	        	    }
 
@@ -85,7 +85,7 @@ public class BookTicket extends JFrame {
 	        	    public void focusLost(FocusEvent e) {
 	        	        if (dateField.getText().isEmpty()) {
 	        	            dateField.setForeground(Color.GRAY);
-	        	            dateField.setText("YYYY-MM-DD"); // Reset placeholder if left empty
+	        	            dateField.setText("YYYY-MM-DD"); 
 	        	        }
 	        	    }
 	        	});
@@ -113,8 +113,23 @@ public class BookTicket extends JFrame {
 	         bookBtn.setFont(new Font("Arial", Font.BOLD, 15));
 	         bookBtn.setBackground(new Color(25, 166, 93));
 	         bookBtn.setForeground(Color.WHITE);
-	         bookBtn.setBounds(100, 300, 180, 35);
+	         bookBtn.setBounds(180, 300, 180, 40);
 	         add(bookBtn);
+	         
+	         
+	         JButton Back=new JButton("Back");
+	         Back.setBounds(20,300,100,40);
+	         Back.setBackground(Color.RED);
+	         Back.setForeground(Color.WHITE);
+	         Back.setFont(new Font("Arial", Font.BOLD, 14));
+	         add(Back);
+	         
+	         Back.addActionListener(new ActionListener() {
+	         	public void actionPerformed(ActionEvent e) {
+	         		dispose();
+	         		new Dashboard().setVisible(true);
+	         	}
+	         });
 	         
 	         bookBtn.addActionListener(new ActionListener() {
 	        	 @Override

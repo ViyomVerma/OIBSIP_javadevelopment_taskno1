@@ -3,12 +3,15 @@ package com.reservation_system;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -55,7 +58,21 @@ public class ViewBookings extends JFrame{
         bookingsTable.setForeground(new Color(0, 51, 102));                
         bookingsTable.setGridColor(new Color(180, 180, 180));             
         bookingsTable.setRowHeight(25);
-
+        
+        
+        JButton Back=new JButton("Back");
+        Back.setBounds(20,300,100,40);
+        Back.setBackground(Color.RED);
+        Back.setForeground(Color.WHITE);
+        Back.setFont(new Font("Arial", Font.BOLD, 14));
+        add(Back);
+        
+        Back.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+        		new Dashboard().setVisible(true);
+        	}
+        });
         
         JTableHeader header = bookingsTable.getTableHeader();
         header.setFont(new Font("Arial", Font.BOLD, 14));

@@ -90,7 +90,7 @@ public class Dashboard extends JFrame {
             int choice = JOptionPane.showConfirmDialog(this, "Do you want to logout?", "Confirm", JOptionPane.YES_NO_OPTION);
             if (choice == JOptionPane.YES_OPTION) {
                 dispose();
-                new loginform(); 
+                new loginform().setVisible(true); 
             }
         });
 

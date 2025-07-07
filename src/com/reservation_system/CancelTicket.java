@@ -41,10 +41,26 @@ public class CancelTicket extends JFrame {
         add(pnrField);
 
         JButton cancelBtn = new JButton("Cancel Ticket");
-        cancelBtn.setBounds(120, 130, 140, 35);
+        cancelBtn.setBounds(180, 200, 180, 40);
         cancelBtn.setBackground(new Color(7, 60, 61));
         cancelBtn.setForeground(Color.WHITE);
+        cancelBtn.setFont(new Font("Arial", Font.BOLD, 14));
         add(cancelBtn);
+        
+        
+        JButton Back=new JButton("Back");
+        Back.setBounds(20,200,100,40);
+        Back.setBackground(Color.RED);
+        Back.setForeground(Color.WHITE);
+        Back.setFont(new Font("Arial", Font.BOLD, 14));
+        add(Back);
+        
+        Back.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+        		new Dashboard().setVisible(true);
+        	}
+        });
 
         cancelBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

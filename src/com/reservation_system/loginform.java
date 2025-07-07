@@ -135,7 +135,6 @@ public class loginform extends JFrame {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 int userId = rs.getInt("id");
-                System.out.println(userId);
                 String fullname = rs.getString("fullname");
                 JOptionPane.showMessageDialog(this, "Welcome, " + fullname + "!");
                 dispose();
